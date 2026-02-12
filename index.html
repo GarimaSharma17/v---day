@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 You & Me - A Love Story 💕</title>
+    <meta name="description" content="A beautiful interactive love story celebrating our love.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Falling Hearts Canvas -->
+    <canvas id="heartsCanvas"></canvas>
+
+    <!-- Floating particles -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#love-letters" class="nav-link" data-section="love-letters">Love Letters</a>
+        <a href="#our-story" class="nav-link" data-section="our-story">Our Story</a>
+        <a href="#promises" class="nav-link" data-section="promises">Promises</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section active-section">
+        <div class="hero-content">
+            <div class="heart-container">
+                <div class="beating-heart">
+                    <div class="heart-shape"></div>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                <span class="name name-1">You</span>
+                <span class="ampersand">&</span>
+                <span class="name name-2">Me</span>
+            </h1>
+            <p class="hero-subtitle">A love written in the stars</p>
+            <div class="scroll-indicator">
+                <span>Explore Our Love Story</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letters Section -->
+    <section id="love-letters" class="section">
+        <div class="section-header">
+            <h2 class="section-title">💌 Love Letters</h2>
+            <p class="section-subtitle">Click on each envelope to read the letter inside</p>
+        </div>
+        <div class="letters-grid">
+            <!-- Letter 1 -->
+            <div class="envelope-wrapper" id="letter-1">
+                <div class="envelope">
+                    <div class="envelope-front">
+                        <div class="envelope-seal">💕</div>
+                        <p class="envelope-label">From Me</p>
+                        <p class="envelope-sublabel">To My Everything</p>
+                    </div>
+                    <div class="letter-content">
+                        <div class="letter-paper">
+                            <p class="letter-greeting">My Dearest Love,</p>
+                            <p>Every moment with you feels like a beautiful dream I never want to wake up from. Your
+                                smile is my sunrise, and your laughter is the melody that makes my heart dance.</p>
+                            <p>You came into my life like a gentle breeze and turned it into a magnificent storm of
+                                love, joy, and endless happiness.</p>
+                            <p>I love you more than words could ever express, more than the stars in the sky, more than
+                                all the grains of sand on every beach.</p>
+                            <p class="letter-closing">Forever Yours,<br><span class="signature">Your Love 💕</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Letter 2 -->
+            <div class="envelope-wrapper" id="letter-2">
+                <div class="envelope">
+                    <div class="envelope-front">
+                        <div class="envelope-seal">💝</div>
+                        <p class="envelope-label">From You</p>
+                        <p class="envelope-sublabel">To My Heart</p>
+                    </div>
+                    <div class="letter-content">
+                        <div class="letter-paper">
+                            <p class="letter-greeting">My Beautiful Soulmate,</p>
+                            <p>Before you, I never believed in fairy tales. But then you walked into my life and showed
+                                me that magic is real and love is the greatest adventure.</p>
+                            <p>You are the reason I believe in forever. Every day with you is a gift that I treasure
+                                with all my heart.</p>
+                            <p>Thank you for choosing me, for loving me, and for being the most incredible person I've
+                                ever known.</p>
+                            <p class="letter-closing">With All My Love,<br><span class="signature">Yours Forever
+                                    ❤️</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Letter 3 -->
+            <div class="envelope-wrapper" id="letter-3">
+                <div class="envelope">
+                    <div class="envelope-front">
+                        <div class="envelope-seal">💖</div>
+                        <p class="envelope-label">Our Promise</p>
+                        <p class="envelope-sublabel">Together Forever</p>
+                    </div>
+                    <div class="letter-content">
+                        <div class="letter-paper">
+                            <p class="letter-greeting">Dear Us,</p>
+                            <p>This letter is a promise — a promise that no matter what storms may come, we will face
+                                them together, hand in hand.</p>
+                            <p>We promise to laugh together until our cheeks hurt, to hold each other through the tears,
+                                and to never stop choosing each other every single day.</p>
+                            <p>Our love story is the most beautiful story ever written, and the best chapters are yet to
+                                come.</p>
+                            <p class="letter-closing">With Eternal Love,<br><span class="signature">You & Me 💞</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Story Section -->
+    <section id="our-story" class="section">
+        <div class="section-header">
+            <h2 class="section-title">📖 Our Love Story</h2>
+            <p class="section-subtitle">An interactive journey through our love</p>
+        </div>
+        <div class="story-container">
+            <div class="story-book">
+                <div class="story-page" id="story-page">
+                    <div class="page-number" id="page-number">Chapter 1</div>
+                    <h3 class="page-title" id="page-title"></h3>
+                    <div class="page-illustration" id="page-illustration"></div>
+                    <p class="page-text" id="page-text"></p>
+                    <div class="story-choices" id="story-choices"></div>
+                </div>
+                <div class="story-navigation">
+                    <button class="story-btn" id="prev-btn" onclick="prevChapter()">← Previous</button>
+                    <div class="story-progress">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <button class="story-btn" id="next-btn" onclick="nextChapter()">Next →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promises Section -->
+    <section id="promises" class="section">
+        <div class="section-header">
+            <h2 class="section-title">🌟 Our Promises</h2>
+            <p class="section-subtitle">Forever and always</p>
+        </div>
+        <div class="promises-container">
+            <div class="promise-card" style="--delay: 0">
+                <div class="promise-icon">🌅</div>
+                <h3>Every Morning</h3>
+                <p>I promise to make every morning beautiful with my love, just like the sunrise that you bring into my
+                    life.</p>
+            </div>
+            <div class="promise-card" style="--delay: 1">
+                <div class="promise-icon">🌙</div>
+                <h3>Every Night</h3>
+                <p>I promise to be the last thought before sleep, the sweet dream, and the warm embrace through every
+                    night.</p>
+            </div>
+            <div class="promise-card" style="--delay: 2">
+                <div class="promise-icon">🌧️</div>
+                <h3>Through Every Storm</h3>
+                <p>I promise to hold your hand through every storm, to be your shelter, your comfort, and your strength.
+                </p>
+            </div>
+            <div class="promise-card" style="--delay: 3">
+                <div class="promise-icon">🎭</div>
+                <h3>Through Laughter & Tears</h3>
+                <p>I promise to celebrate every joy and wipe away every tear, because together, we can conquer anything.
+                </p>
+            </div>
+            <div class="promise-card" style="--delay: 4">
+                <div class="promise-icon">♾️</div>
+                <h3>Forever & Beyond</h3>
+                <p>I promise that this love between us will only grow stronger with every passing day, until infinity
+                    and beyond.</p>
+            </div>
+            <div class="promise-card" style="--delay: 5">
+                <div class="promise-icon">🏡</div>
+                <h3>Building Our World</h3>
+                <p>I promise to build a beautiful world together, filled with love, trust, respect, and endless
+                    happiness.</p>
+            </div>
+        </div>
+        <div class="final-message">
+            <div class="message-heart">💕</div>
+            <p class="final-text">You & Me — a love story with no ending, only beautiful new chapters.</p>
+            <button class="love-btn" id="surprise-btn" onclick="triggerLoveExplosion()">
+                <span>✨ Click for a Surprise ✨</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Love Explosion Overlay -->
+    <div id="love-explosion" class="love-explosion hidden">
+        <div class="explosion-content">
+            <h2 class="explosion-title">I Love You</h2>
+            <p class="explosion-names">You & Me</p>
+            <p class="explosion-subtitle">Today, Tomorrow, and Forever 💕</p>
+            <button class="close-explosion" onclick="closeLoveExplosion()">Close</button>
+        </div>
+    </div>
+
+    <!-- Audio Toggle -->
+    <button id="music-toggle" class="music-toggle" title="Toggle Music">
+        🎵
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
